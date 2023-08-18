@@ -1,10 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button, Image } from 'react-native';
-// import { Route, Link } from 'react-router-native';
-import Home from './components/Home';
-// import Location from './components/Location';
-// import Schedule from './components/Schedule';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreenWrapper from './components/HomeScreenWrapper';
+import Location from './components/Location';
+import Schedule from './components/Schedule';
+
+const Stack = createStackNavigator();
+
 
 export default function App() {
   return (
@@ -15,11 +19,13 @@ export default function App() {
             <Image source={require('./assets/AFC-logo.png')} style={styles.logo} />
           </View>
 
-          <View style={styles.divider} />
-          <View style={styles.homeContainer}>
-            <Home />
-          </View>
-          <StatusBar style="auto" />
+          <NavigationContainer>
+          <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Home" component={HomeScreenWrapper} />
+            <Stack.Screen name="Location" component={Location} />
+            <Stack.Screen name="Schedule" component={Schedule} />
+          </Stack.Navigator>
+        </NavigationContainer>
 
           {/* Buttons to navigate */}
           {/* <View style={styles.navigationButtons}>

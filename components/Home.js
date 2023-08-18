@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const Home = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.headerText}>American Family Care</Text>
+            <Text style={styles.headerText}>fffff</Text>
         </View>
     );
 }
