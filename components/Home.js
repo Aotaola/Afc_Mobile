@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     },
     headerText: {
         fontSize: 35,
-        fontFamily: 'Century'
+        fontFamily: 'Helvetica Neue',
         
     }
 });
